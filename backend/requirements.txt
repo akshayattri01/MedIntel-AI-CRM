@@ -16,3 +16,4 @@ langgraph==0.2.60
 slowapi==0.1.9
 pytest==8.3.4
 httpx==0.28.1
+psycopg2-binary==2.9.10
