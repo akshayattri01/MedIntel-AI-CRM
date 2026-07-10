@@ -177,7 +177,7 @@ MedIntel-AI-CRM
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Screenshot 2026-07-10 090438.png)
 
 Shows CRM overview including HCP count, meetings, follow-ups, monthly interactions, recent activity, and sentiment.
 
@@ -185,7 +185,7 @@ Shows CRM overview including HCP count, meetings, follow-ups, monthly interactio
 
 ## HCP Directory
 
-![HCP Directory](screenshots/hcp-directory.png)
+![HCP Directory](screenshots/Screenshot 2026-07-10 090523.png)
 
 Manage Healthcare Professionals using complete CRUD operations.
 
