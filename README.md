@@ -1,99 +1,346 @@
-# MedIntel AI CRM
+# 🏥 MedIntel AI CRM
 
-Production-ready AI-first CRM for healthcare professionals. Medical representatives can manage HCPs, log structured interactions, or use a LangGraph-powered assistant to extract meeting details, store CRM records, plan follow-ups, and search prior activity.
+An AI-first Healthcare CRM built using **React**, **FastAPI**, **PostgreSQL**, **LangGraph**, and **Groq Llama 3.3 70B**. The application helps Medical Representatives efficiently manage Healthcare Professional (HCP) interactions using AI-powered workflows such as interaction logging, follow-up planning, sentiment analysis, analytics, and intelligent CRM assistance.
 
-## Architecture
+---
 
-- **Frontend:** React 19, TypeScript, Redux Toolkit, React Router, React Hook Form, Axios, Tailwind CSS, Recharts, Framer Motion, Lucide icons.
-- **Backend:** Python 3.12, FastAPI, SQLAlchemy 2, Alembic, PostgreSQL, JWT auth, repository and service layers.
-- **AI:** LangGraph workflow with intent detection, entity extraction, tool selection, tool execution, and response generation using Groq Llama 3.3 70B by default.
-- **Deployment:** Docker Compose with PostgreSQL, API, and Vite-built frontend.
+# ✨ Features
 
-## Quick Start
+## 📊 Dashboard
+- Total HCP statistics
+- Today's meetings
+- Pending follow-ups
+- Monthly interaction analytics
+- Recent CRM activity
+- Sentiment overview
+
+---
+
+## 👨‍⚕️ HCP Directory
+
+- Add HCP
+- Edit HCP
+- Delete HCP
+- Search HCP
+- View doctor profile
+
+---
+
+## 📝 Interaction Management
+
+- Log Interaction
+- Edit Interaction
+- Delete Interaction
+- Interaction History
+- AI-assisted interaction summarization
+
+---
+
+## 🤖 AI Assistant
+
+Powered by **LangGraph + Groq Llama 3.3 70B**
+
+Supports:
+
+- Summarize Interactions
+- Generate Follow-up Plans
+- Draft Follow-up Emails
+- Find Doctors by Sentiment
+- Explain Dashboard Analytics
+- AI Insights
+
+---
+
+# 🧠 LangGraph Agent Workflow
+
+```
+User Prompt
+      │
+      ▼
+Intent Detection
+      │
+      ▼
+Entity Extraction
+      │
+      ▼
+Tool Selection
+      │
+      ▼
+Tool Execution
+      │
+      ▼
+LLM Response Generation
+      │
+      ▼
+Final Response
+```
+
+---
+
+# 🔧 LangGraph Tools
+
+The project implements five AI tools required by the assignment.
+
+### 1️⃣ Log Interaction
+
+Captures HCP interaction details from user input and stores structured CRM records.
+
+Example:
+
+- Doctor Name
+- Discussion Summary
+- Samples Shared
+- Sentiment
+- Follow-up Actions
+
+---
+
+### 2️⃣ Edit Interaction
+
+Allows editing previously logged interactions.
+
+Can update:
+
+- Summary
+- Sentiment
+- Materials Shared
+- Follow-up Notes
+- Meeting Details
+
+---
+
+### 3️⃣ Interaction Summarizer
+
+Summarizes interaction history using Llama 3.3 70B.
+
+---
+
+### 4️⃣ Follow-up Planner
+
+Generates AI-powered follow-up recommendations.
+
+---
+
+### 5️⃣ CRM Analytics
+
+Explains dashboard analytics and suggests next best actions.
+
+---
+
+# ⚙️ Tech Stack
+
+## Frontend
+
+- React
+- Redux Toolkit
+- TypeScript
+- Tailwind CSS
+- React Router
+- Recharts
+
+## Backend
+
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- LangGraph
+- Groq API
+
+## AI
+
+- LangGraph
+- Groq Llama 3.3 70B
+- Prompt Engineering
+
+---
+
+# 📂 Project Structure
+
+```
+MedIntel-AI-CRM
+│
+├── backend
+│
+├── frontend
+│
+├── screenshots
+│   ├── dashboard.png
+│   ├── hcp-directory.png
+│   └── ai-assistant.png
+│
+└── README.md
+```
+
+---
+
+# 📸 Screenshots
+
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+Shows CRM overview including HCP count, meetings, follow-ups, monthly interactions, recent activity, and sentiment.
+
+---
+
+## HCP Directory
+
+![HCP Directory](screenshots/hcp-directory.png)
+
+Manage Healthcare Professionals using complete CRUD operations.
+
+---
+
+## AI Assistant
+
+![AI Assistant](screenshots/ai-assistant.png)
+
+LangGraph-powered assistant for CRM intelligence including summarization, follow-up planning, analytics explanation, and AI insights.
+
+---
+
+# ✅ CRUD Operations
+
+✔ Add HCP
+
+✔ Edit HCP
+
+✔ Delete HCP
+
+✔ Search HCP
+
+✔ Log Interaction
+
+✔ Edit Interaction
+
+✔ Delete Interaction
+
+✔ View Interaction History
+
+---
+
+# 💾 Database
+
+PostgreSQL stores:
+
+- HCP Profiles
+- Interaction Logs
+- Follow-up Plans
+- Analytics Data
+- Sentiment Information
+
+---
+
+# 🚀 Running the Project
+
+## Clone Repository
 
 ```bash
-cp .env.example .env
-# Add GROQ_API_KEY in .env for live AI responses.
-docker-compose up --build
+git clone https://github.com/akshayattri01/MedIntel-AI-CRM.git
 ```
 
-Open the frontend at `http://localhost:5173` and the API docs at `http://localhost:8000/docs`.
+---
 
-Demo credentials after seeding:
-
-- Email: `rep@medintel.ai`
-- Password: `Password123!`
-
-## Folder Structure
-
-```text
-backend/app/api          REST routers
-backend/app/agents       LangGraph CRM agent
-backend/app/auth         JWT and password security
-backend/app/models.py    SQLAlchemy relational schema
-backend/app/repositories Data access layer
-backend/app/services     Business logic
-frontend/src/components  Reusable UI and layout
-frontend/src/pages       Application pages
-frontend/src/redux       Store and slices
-frontend/src/services    Axios API client
-```
-
-## LangGraph Workflow
-
-1. User message
-2. Intent detection
-3. Entity extraction with Pydantic structured output
-4. Tool selection
-5. Tool execution
-6. Response generation
-7. Structured JSON response
-
-Implemented tools: log interaction, edit interaction, search interaction, HCP summary, follow-up planner, meeting preparation, and analytics generator.
-
-## Database Schema
-
-Core tables include users, HCPs, products, materials, samples, interactions, follow-ups, interaction history, and audit logs. Each table uses UUID primary keys, timestamps, soft delete columns, foreign keys, relationships, and useful indexes.
-
-## Environment Variables
-
-See `.env.example` for all supported values. Required in production: `DATABASE_URL`, `JWT_SECRET_KEY`, `GROQ_API_KEY`, and `FRONTEND_URL`.
-
-## API Documentation
-
-FastAPI exposes OpenAPI and Swagger at `/docs`. Main route groups:
-
-- `/api/v1/auth`
-- `/api/v1/users`
-- `/api/v1/hcp`
-- `/api/v1/interactions`
-- `/api/v1/history`
-- `/api/v1/dashboard`
-- `/api/v1/analytics`
-- `/api/v1/ai/chat`
-- `/api/v1/tools`
-
-## Testing
+## Backend
 
 ```bash
-cd backend && pytest
-cd frontend && npm test
+cd backend
+
+python -m venv .venv
 ```
 
-## Sample Prompts And Screenshots
+Activate
 
-Assistant prompts live in `docs/sample-prompts.md`. Capture product screenshots from the running dashboard, HCP directory, interaction assistant, and analytics pages for portfolio use.
+Windows
 
-## Resume Highlights
+```bash
+.venv\Scripts\activate
+```
 
-- Built multi-node LangGraph CRM assistant with tool orchestration and structured outputs.
-- Designed production-style FastAPI architecture with repository and service layers.
-- Implemented healthcare CRM workflows with relational PostgreSQL schema and auditability.
-- Created enterprise dashboard UI with protected routing, Redux state, analytics charts, empty/error/loading states, and dark mode.
+Install dependencies
 
-## Future Improvements
+```bash
+pip install -r requirements.txt
+```
 
-- Real-time token streaming through Server-Sent Events.
-- Calendar integrations for follow-up scheduling.
-- Organization-level multi-tenancy and SSO.
-- Fine-grained compliance exports and PHI redaction workflows.
+Run
+
+```bash
+uvicorn app.main:app --reload
+```
+
+---
+
+## Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+---
+
+# 🔑 Environment Variables
+
+Backend
+
+```env
+DATABASE_URL=
+
+GROQ_API_KEY=
+
+JWT_SECRET=
+```
+
+Frontend
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+---
+
+# 🎯 Assignment Requirements Covered
+
+- ✅ LangGraph Agent
+- ✅ LLM Integration (Groq Llama 3.3 70B)
+- ✅ Log Interaction Tool
+- ✅ Edit Interaction Tool
+- ✅ HCP CRUD
+- ✅ AI Assistant
+- ✅ Dashboard Analytics
+- ✅ PostgreSQL Database
+- ✅ FastAPI Backend
+- ✅ React Frontend
+- ✅ GitHub Repository
+- ✅ README Documentation
+
+---
+
+# 🔮 Future Enhancements
+
+- Voice Interaction Logging
+- OCR Prescription Scanner
+- WhatsApp Integration
+- Email Automation
+- Appointment Scheduling
+- Predictive CRM Analytics
+- Multi-user Authentication
+
+---
+
+# 👨‍💻 Author
+
+**Akshay Attri**
+
+GitHub:
+https://github.com/akshayattri01
+
+---
+
+# 📄 License
+
+This project was developed as part of an AI-First CRM technical assignment using **LangGraph**, **FastAPI**, **React**, **PostgreSQL**, and **Groq Llama 3.3 70B**.
