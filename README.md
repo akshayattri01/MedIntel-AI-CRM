@@ -1,73 +1,127 @@
 # 🏥 MedIntel AI CRM
 
-> An AI-powered Healthcare CRM platform designed to help Medical Representatives efficiently manage Healthcare Professionals (HCPs), interactions, analytics, and intelligent follow-up planning using Large Language Models.
+> An AI-powered Healthcare CRM platform designed for Medical Representatives to efficiently manage Healthcare Professionals (HCPs), track interactions, monitor follow-ups, analyze engagement, and leverage AI-powered insights using Large Language Models.
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white">
-  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi">
+  <img src="https://img.shields.io/badge/FastAPI-Python-009688?logo=fastapi">
   <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql">
   <img src="https://img.shields.io/badge/LangGraph-AI-blueviolet">
   <img src="https://img.shields.io/badge/Llama%203.3%2070B-Groq-orange">
   <img src="https://img.shields.io/badge/Docker-Container-2496ED?logo=docker">
+  <img src="https://img.shields.io/badge/License-MIT-green">
 </p>
+
+---
+
+# 🌐 Live Demo
+
+## 🚀 Live Frontend
+
+**URL**
+
+https://med-intel-ai-91anqagz3-aashu-attri-s-projects.vercel.app/
+
+---
+
+## ⚙️ Live Backend API
+
+**URL**
+
+https://medintel-ai-crm.onrender.com
+
+---
+
+## 📚 Swagger API Documentation
+
+**URL**
+
+https://medintel-ai-crm.onrender.com/docs
+
+Use the interactive Swagger UI to explore and test all backend REST APIs.
+
+---
+
+## 💻 GitHub Repository
+
+https://github.com/akshayattri01/MedIntel-AI-CRM
 
 ---
 
 # 📖 Overview
 
-**MedIntel AI CRM** is a modern AI-first Healthcare Customer Relationship Management platform built for pharmaceutical sales teams.
+**MedIntel AI CRM** is a modern AI-powered Healthcare Customer Relationship Management platform built for Pharmaceutical Sales Teams and Medical Representatives.
 
-The platform enables Medical Representatives to maintain Healthcare Professional records, track meetings, analyze engagement, monitor follow-ups, and leverage AI to generate summaries, insights, and intelligent recommendations.
+The platform enables users to:
 
-The project combines modern frontend technologies with FastAPI and LangGraph-powered AI workflows to deliver a smarter CRM experience.
+- Manage Healthcare Professionals (HCPs)
+- Record doctor interactions
+- Track follow-ups
+- Monitor engagement analytics
+- Generate AI-powered summaries
+- Draft professional emails
+- Analyze sentiment
+- Receive intelligent follow-up recommendations
+
+By combining **React**, **FastAPI**, **PostgreSQL**, and **LangGraph-powered AI**, MedIntel AI CRM delivers a smarter, more efficient healthcare CRM solution.
 
 ---
 
 # ✨ Key Features
 
-### 📊 Smart Dashboard
+## 📊 Smart Dashboard
 
-- Total HCP statistics
-- Today's meetings
-- Pending follow-ups
-- Monthly interaction analytics
-- Recent CRM activity
-- Sentiment overview
+- HCP Statistics
+- Today's Meetings
+- Pending Follow-ups
+- Monthly Interaction Analytics
+- Recent CRM Activity
+- Sentiment Overview
 
 ---
 
-### 👨‍⚕️ Healthcare Professional Directory
+## 👨‍⚕️ Healthcare Professional Directory
 
 - Add Healthcare Professionals
-- Edit details
-- Delete records
-- Search doctors
-- Track engagement score
+- Edit Details
+- Delete Records
+- Search Doctors
+- Engagement Score Tracking
 
 ---
 
-### 📝 Interaction Management
+## 📝 Interaction Management
 
-- Log meetings
-- Record discussion notes
-- Product conversations
-- Follow-up reminders
-- Meeting history
+- Log Meetings
+- Discussion Notes
+- Product Conversations
+- Meeting History
+- Follow-up Planning
+- CRM Timeline
 
 ---
 
-### 🤖 AI Assistant
+## 🤖 AI Assistant
 
 Powered by **LangGraph + Groq Llama 3.3 70B**
 
-Capabilities include:
+Features include:
 
-- Interaction summarization
-- AI follow-up planning
-- Professional email drafting
-- Analytics explanation
-- CRM insights
-- Sentiment analysis
+- AI Interaction Summaries
+- Intelligent Follow-up Planning
+- Professional Email Drafting
+- CRM Insights
+- Sentiment Analysis
+- Next Best Action Recommendations
+
+---
+
+## 📈 Analytics
+
+- Monthly Interaction Reports
+- Follow-up Analytics
+- HCP Engagement Trends
+- CRM Performance Dashboard
 
 ---
 
@@ -82,12 +136,17 @@ Capabilities include:
 - Framer Motion
 - Recharts
 
+---
+
 ## Backend
 
-- FastAPI
 - Python
+- FastAPI
 - SQLAlchemy
 - PostgreSQL
+- JWT Authentication
+
+---
 
 ## Artificial Intelligence
 
@@ -95,27 +154,38 @@ Capabilities include:
 - Groq API
 - Llama 3.3 70B
 
+---
+
 ## DevOps
 
 - Docker
 - Docker Compose
 - Nginx
+- Render
+- Vercel
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 MedIntel-AI-CRM
 │
 ├── backend/
+│   ├── app/
+│   ├── migrations/
+│   ├── requirements.txt
 │
 ├── frontend/
+│   ├── src/
+│   ├── public/
 │
 ├── screenshots/
 │   ├── dashboard.png
 │   ├── hcp-directory.png
-│   └── ai.assistant.png
+│   ├── interaction.png
+│   ├── analytics.png
+│   └── ai-assistant.png
 │
 ├── docker-compose.yml
 ├── .env.example
@@ -131,23 +201,29 @@ MedIntel-AI-CRM
 
 ![Dashboard](screenshots/dashboard.png)
 
-The dashboard provides an overview of HCP statistics, meeting schedules, follow-up tasks, monthly interactions, and CRM activity.
-
 ---
 
 ## 👨‍⚕️ HCP Directory
 
 ![HCP Directory](screenshots/hcp-directory.png)
 
-Manage Healthcare Professionals through complete CRUD operations with search and engagement tracking.
+---
+
+## 📝 Interaction Management
+
+![Interaction](screenshots/interaction.png)
+
+---
+
+## 📈 Analytics
+
+![Analytics](screenshots/analytics.png)
 
 ---
 
 ## 🤖 AI Assistant
 
-![AI Assistant](screenshots/ai.assistant.png)
-
-AI-powered assistant capable of summarizing interactions, generating follow-up plans, explaining analytics, drafting emails, and providing CRM intelligence.
+![AI Assistant](screenshots/ai-assistant.png)
 
 ---
 
@@ -163,28 +239,53 @@ cd MedIntel-AI-CRM
 
 ---
 
-## Environment Variables
+# 🔑 Environment Variables
 
 Create a `.env` file using `.env.example`.
 
 Example:
 
-```
+```env
 DATABASE_URL=
+
+JWT_SECRET_KEY=
+
+JWT_ALGORITHM=
+
+ACCESS_TOKEN_EXPIRE_MINUTES=
+
 GROQ_API_KEY=
+
+FRONTEND_URL=
 ```
 
 ---
 
-## Run using Docker
+# ▶️ Run Backend
 
 ```bash
-docker-compose up --build
+cd backend
+
+pip install -r requirements.txt
+
+python -m uvicorn app.main:app --reload
+```
+
+Backend
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger
+
+```
+http://127.0.0.1:8000/docs
 ```
 
 ---
 
-## Run Frontend
+# ▶️ Run Frontend
 
 ```bash
 cd frontend
@@ -194,17 +295,56 @@ npm install
 npm run dev
 ```
 
+Frontend
+
+```
+http://localhost:5173
+```
+
 ---
 
-## Run Backend
+# 🐳 Run using Docker
 
 ```bash
-cd backend
-
-pip install -r requirements.txt
-
-uvicorn app.main:app --reload
+docker-compose up --build
 ```
+
+---
+
+# 🔗 REST API Endpoints
+
+## Authentication
+
+- POST `/api/v1/auth/register`
+- POST `/api/v1/auth/login`
+- POST `/api/v1/auth/logout`
+- POST `/api/v1/auth/refresh`
+
+---
+
+## Healthcare Professionals
+
+- Create HCP
+- Update HCP
+- Delete HCP
+- View HCP Directory
+
+---
+
+## Interactions
+
+- Log Interaction
+- View Interaction History
+- Follow-up Management
+
+---
+
+## AI
+
+- Generate AI Summary
+- Sentiment Analysis
+- Follow-up Recommendation
+- Email Generation
 
 ---
 
@@ -212,25 +352,25 @@ uvicorn app.main:app --reload
 
 The AI Assistant can:
 
-- Summarize doctor interactions
-- Generate intelligent follow-up plans
-- Draft professional emails
-- Explain CRM analytics
-- Analyze doctor sentiment
-- Recommend next best actions
+- Summarize Doctor Meetings
+- Generate Follow-up Plans
+- Draft Professional Emails
+- Explain CRM Analytics
+- Analyze Doctor Sentiment
+- Recommend Next Best Actions
 
 ---
 
 # 🔮 Future Enhancements
 
-- Authentication & Authorization
-- Role-based Access Control
+- Role-Based Authentication
 - Calendar Integration
 - Notification System
 - Voice Assistant
-- Mobile Application
-- Cloud Deployment
 - WhatsApp Integration
+- Mobile Application
+- Multi-user Collaboration
+- Advanced AI Insights
 
 ---
 
@@ -238,15 +378,39 @@ The AI Assistant can:
 
 **Akshay Attri**
 
-📧 Email: aashuattri01@gmail.com
+📧 **Email**
 
-🔗 GitHub
+aashuattri01@gmail.com
+
+---
+
+💻 **GitHub**
 
 https://github.com/akshayattri01
 
-🔗 LinkedIn
+---
+
+🔗 **LinkedIn**
 
 https://www.linkedin.com/in/aashu-attri-24616a24b
+
+---
+
+🌐 **Live Frontend**
+
+https://med-intel-ai-91anqagz3-aashu-attri-s-projects.vercel.app/
+
+---
+
+⚙️ **Backend API**
+
+https://medintel-ai-crm.onrender.com
+
+---
+
+📚 **Swagger Documentation**
+
+https://medintel-ai-crm.onrender.com/docs
 
 ---
 
@@ -254,10 +418,10 @@ https://www.linkedin.com/in/aashu-attri-24616a24b
 
 If you found this project useful, consider giving it a ⭐ on GitHub.
 
-It helps the project grow and supports future development.
+It helps support future development and improvements.
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
